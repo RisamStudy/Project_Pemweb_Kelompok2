@@ -102,6 +102,72 @@ const Hero = () => {
           </div>
         </div>
       </Slider>
+      <div className="absolute left-[15%] bottom-[15%] hidden lg:flex items-center justify-center bg-white border border-gray-300 shadow-lg rounded-md z-10 w-[1050px] mx-auto p-4 ">
+        <div className="grid gap-5 grid-cols-4 flex-grow">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="" className="flex font-semibold gap-1 items-center">
+              {/* <Search className="w-4 h-4" /> */}
+              Location
+            </label>
+            <select
+              name=""
+              id=""
+              className="border border-gray-300 rounded-sm p-1"
+            >
+              <option value="">Select options</option>
+              <option value="">Bali</option>
+              <option value="">India</option>
+              <option value="">Tokyo</option>
+              <option value="">Venice</option>
+              <option value="">Paris</option>
+            </select>
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="" className="font-semibold">
+              Check In
+            </label>
+            <input
+              type="date"
+              className="border p-1 border-gray-300 rounded-sm"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="" className="font-semibold">
+              Check Out
+            </label>
+            <input
+              type="date"
+              className="border p-1 border-gray-300 rounded-sm"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="" className="flex font-bold gap-1 items-center">
+              {/* <Search className="2-4 h-4" /> */}
+              Guest
+            </label>
+            <select
+              name=""
+              id=""
+              className="border border-gray-300 rounded-sm p-1"
+            >
+              <option value="">Select options</option>
+              <option value="">2 Guest 1 Children</option>
+              <option value="">2 Guest 1 Children</option>
+              <option value="">2 Guest 1 Children</option>
+              <option value="">2 Guest 1 Children</option>
+              <option value="">2 Guest 1 Children</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="" className="text-white">
+            Transmission
+          </label>
+          <button className="bg-red-500 transition-all ease-in text-white hover:bg-black hover:text-white margin px-3 py-1 rounded-md ml-6">
+            Book Now
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
