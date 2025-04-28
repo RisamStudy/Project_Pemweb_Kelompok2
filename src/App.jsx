@@ -6,6 +6,8 @@ import Tours from "./pages/Tours";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Footer from "./Components/Footer";
+import ScrollToTop from "react-scroll-to-top";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Home />
+        <Footer />
       </>
     ),
   },
@@ -23,6 +26,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Tours />
+        <Footer />
       </>
     ),
   },
@@ -32,6 +36,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Gallery />
+        <Footer />
       </>
     ),
   },
@@ -41,6 +46,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <About />
+        <Footer />
       </>
     ),
   },
@@ -50,6 +56,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Contact />
+        <Footer />
       </>
     ),
   },
@@ -59,6 +66,16 @@ const App = () => {
   return (
     <>
       <RouterProvider router={router} />
+      <ScrollToTop
+        color="white"
+        smooth
+        style={{
+          backgroundColor: "#EF4444",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      />
     </>
   );
 };

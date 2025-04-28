@@ -5,7 +5,7 @@ import Features from "../Components/Features";
 import Gallery from "../Components/GalleryComp";
 import GalleryComp from "../Components/GalleryComp";
 import Banner from "../Components/Banner";
-import Contact from "../Components/Contact";
+import Contact from "../Components/ContactComp";
 
 const Home = () => {
   return (

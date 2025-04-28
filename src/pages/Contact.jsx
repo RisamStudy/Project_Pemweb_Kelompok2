@@ -1,11 +1,13 @@
 import React from "react";
+import ContactComp from "../Components/ContactComp";
+import TopBanner from "../Components/TopBanner";
 
 const Contact = () => {
   return (
-    <div>
-      Hello i am contact page
-      <h1>hallow</h1>
-    </div>
+    <>
+      <TopBanner text="Contact" />
+      <ContactComp />
+    </>
   );
 };
 
