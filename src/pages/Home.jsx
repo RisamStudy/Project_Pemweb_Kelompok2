@@ -1,12 +1,21 @@
 import React from "react";
 import Hero from "../Components/Hero";
 import FeatureDestination from "../Components/FeatureDestination";
+import Features from "../Components/Features";
+import Gallery from "../Components/GalleryComp";
+import GalleryComp from "../Components/GalleryComp";
+import Banner from "../Components/Banner";
+import Contact from "../Components/Contact";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <FeatureDestination />
+      <Features />
+      <GalleryComp />
+      <Banner />
+      <Contact />
     </div>
   );
 };

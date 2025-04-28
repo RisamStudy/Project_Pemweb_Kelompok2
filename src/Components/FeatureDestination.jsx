@@ -10,8 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Clock, Star } from "lucide-react";
-
-// import "../Components/Css/reactSlick.css";
+import "../Components/Css/reactSlick.css";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={next} alt="prevArrow" {...props} />
@@ -25,10 +24,10 @@ const FeatureDestination = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3,
-    // nextArrow: <$lickArrowLeft />,
-    // prevArrow: <$lickArrowRight />,
+    nextArrow: <SlickArrowLeft />,
+    prevArrow: <SlickArrowRight />,
     responsive: [
       {
         breakpoint: 1024,
@@ -125,15 +124,15 @@ const FeatureDestination = () => {
                         className="object-cover w-full h-48 hover:scale-110 transition-all"
                       />
                       <div className="p-4">
-                        <h3 className="text-xl font-bold mb-2">
-                          {destination.name}
-                        </h3>
                         <p className="text-gray-500 flex items-center gap-1 text-sm mb-1">
                           <Clock width={15} />
                           {destination.time}
                         </p>
+                        <h3 className="text-xl font-bold mb-2">
+                          {destination.name}
+                        </h3>
                         <h3 className="flex gap-1 items-center">
-                          <Star width={20} />
+                          <Star width={20} fill="red" />
                           {destination.star}
                         </h3>
                         <p className="text-gray-600 mb-4 mt-2">
@@ -142,7 +141,7 @@ const FeatureDestination = () => {
                         </p>
                         <div className="flex gap-4">
                           <button className="px-3 py-2 bg-red-500 rounded-md text-white">
-                            ${destination.price}
+                            Rp. {destination.price}
                           </button>
                           <button className="px-3 py-2 bg-black rounded-md text-white">
                             Learn More
