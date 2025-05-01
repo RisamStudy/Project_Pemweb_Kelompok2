@@ -5,9 +5,9 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer
-      className="bg-gray-800 text-white py-10"
+      className="mt-32 bg-black text-white py-10"
       style={{
-        backgroundImage: `url(${footer})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6)),url(${footer})`,
         backgroundPosition: "bottom",
         backgroundSize: "cover",
       }}
@@ -16,10 +16,11 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h1 className="font-bold text-4xl mb-4">
-              <span className="text-red-500">Trip</span>Asiik
+              Trip
+              <span className="text-red-500">Asiik</span>
             </h1>
             <p className="text-sm">
-              we/re dedicated to making your travel dreams come true wth
+              we're dedicated to making your travel dreams come true wth
               expertaly curated tours and unforgottable experiences.
             </p>
           </div>

@@ -16,6 +16,7 @@ const About = () => {
                 src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=600"
                 alt="Travel "
                 className="rounded-lg"
+                loading="lazy"
               />
               <div className="absolute bottom-[45%] right-0 p-4 bg-red-500 text-white  font-bold md:text-4xl rounded-lg">
                 How We Are Best <br /> For Travel !
@@ -49,7 +50,7 @@ const About = () => {
           <div className="flex-1">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4">
-                <img src={trip} alt="" className="w-20" />
+                <img src={trip} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
                     50+ Destination
@@ -63,7 +64,7 @@ const About = () => {
             </div>
             <div className="bg-white p-6 my-4 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4">
-                <img src={time} alt="" className="w-20" />
+                <img src={time} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
                     Super Fast Booking
@@ -77,7 +78,7 @@ const About = () => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4">
-                <img src={price} alt="" className="w-20" />
+                <img src={price} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
                     Best price

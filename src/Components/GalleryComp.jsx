@@ -1,14 +1,14 @@
 import React from "react";
 import LightGallery from "lightgallery/react";
-import Bali from "../assets/Bali.jpg";
+import Bali from "../assets/Bali.webp";
 import Paris from "../assets/Paris.jpg";
 import Tokyo from "../assets/Tokyo.jpg";
 import India from "../assets/India.jpg";
 import Venice from "../assets/Venice.jpg";
-import Hero1 from "../assets/Hero1.jpg";
+import Hero1 from "../assets/Hero1.webp";
 import Hero2 from "../assets/Hero2.jpg";
 import Hero3 from "../assets/Hero3.jpg";
-import Hero4 from "../assets/Hero4.jpg";
+import Hero4 from "../assets/Hero4.webp";
 
 import "./Css/Gallery.css";
 // import styles
@@ -43,6 +43,7 @@ const GalleryComp = () => {
               alt="India"
               src={India}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200"
+              loading="lazy"
             />
           </a>
           <a href={Hero1}>
@@ -50,6 +51,7 @@ const GalleryComp = () => {
               alt="Hero1"
               src={Hero1}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Hero2}>
@@ -57,6 +59,7 @@ const GalleryComp = () => {
               alt="Hero2"
               src={Hero2}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Hero3}>
@@ -64,6 +67,7 @@ const GalleryComp = () => {
               alt="Hero1"
               src={Hero3}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Hero4}>
@@ -71,6 +75,7 @@ const GalleryComp = () => {
               alt="Gunung Sindoro Sumbing"
               src={Hero4}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Bali}>
@@ -78,6 +83,7 @@ const GalleryComp = () => {
               alt="Bali"
               src={Bali}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Venice}>
@@ -85,6 +91,7 @@ const GalleryComp = () => {
               alt="Venice"
               src={Venice}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Paris}>
@@ -92,6 +99,7 @@ const GalleryComp = () => {
               alt="Paris"
               src={Paris}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
           <a href={Tokyo}>
@@ -99,6 +107,7 @@ const GalleryComp = () => {
               alt="Tokyo"
               src={Tokyo}
               className="w-full aspect-[3/2] object-cover rounded-2xl transition-transform duration-200 mt-3"
+              loading="lazy"
             />
           </a>
         </LightGallery>

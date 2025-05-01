@@ -14,7 +14,8 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto py-2 px-5 flex bg-transparent justify-between items-center">
           <Link to="/">
             <h1 className="text-2xl text-white font-bold ">
-              Trip<span className="text-red-500">Asiik</span>
+              Trip
+              <span className="text-red-500">Asiik</span>
             </h1>
           </Link>
           <div className="flex items-center gap-5">

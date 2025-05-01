@@ -1,5 +1,5 @@
 import React from "react";
-import Bali from "../assets/Bali.jpg";
+import Bali from "../assets/Bali.webp";
 import Paris from "../assets/Paris.jpg";
 import Tokyo from "../assets/Tokyo.jpg";
 import India from "../assets/India.jpg";
@@ -13,10 +13,10 @@ import { Clock, Star } from "lucide-react";
 import "../Components/Css/reactSlick.css";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <img src={next} alt="prevArrow" {...props} />
+  <img src={next} alt="prevArrow" loading="lazy" {...props} />
 );
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  <img src={back} alt="prevArrow" {...props} />
+  <img src={back} alt="prevArrow" loading="lazy" {...props} />
 );
 
 const FeatureDestination = () => {
@@ -57,39 +57,44 @@ const FeatureDestination = () => {
   };
   const destinationJson = [
     {
-      name: "Baliya",
+      name: "Bali",
       img: Bali,
       time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      star: "5 (12 reviews)",
+      price: "5.000.000",
+      loading: "lazy",
     },
     {
       name: "Venice",
       img: Venice,
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
-      price: "69,999",
+      price: "4.000.000",
+      loading: "lazy",
     },
     {
       name: "Tokyo",
       img: Tokyo,
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
-      price: "69,999",
+      price: "2.000.000",
+      loading: "lazy",
     },
     {
       name: "India",
       img: India,
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
-      price: "69,999",
+      price: "8.000.000",
+      loading: "lazy",
     },
     {
       name: "Paris",
       img: Paris,
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
-      price: "69,999",
+      price: "17.000.000",
+      loading: "lazy",
     },
     {
       name: "Tokyo",
@@ -97,6 +102,7 @@ const FeatureDestination = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
   ];
   return (
@@ -122,6 +128,7 @@ const FeatureDestination = () => {
                         width={600}
                         height={400}
                         className="object-cover w-full h-48 hover:scale-110 transition-all"
+                        loading="lazy"
                       />
                       <div className="p-4">
                         <p className="text-gray-500 flex items-center gap-1 text-sm mb-1">

@@ -1,5 +1,5 @@
 import React from "react";
-import Bali from "../assets/Bali.jpg";
+import Bali from "../assets/Bali.webp";
 import Paris from "../assets/Paris.jpg";
 import Tokyo from "../assets/Tokyo.jpg";
 import India from "../assets/India.jpg";
@@ -15,6 +15,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
     {
       name: "Venice",
@@ -22,6 +23,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
     {
       name: "Tokyo",
@@ -29,6 +31,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
     {
       name: "India",
@@ -36,6 +39,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
     {
       name: "Paris",
@@ -43,6 +47,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
     {
       name: "Tokyo",
@@ -50,6 +55,7 @@ const Tours = () => {
       time: "5 Days - 4 Nights",
       star: "3 (12 reviews)",
       price: "69,999",
+      loading: "lazy",
     },
   ];
   return (
@@ -74,6 +80,7 @@ const Tours = () => {
                     width={600}
                     height={400}
                     className="object-cover w-full h-48 hover:scale-110 transition-all"
+                    loading="lazy"
                   />
                   <div className="p-4">
                     <p className="text-gray-500 flex items-center gap-1 text-sm mb-1">
