@@ -38,7 +38,7 @@ const Navbar = () => {
                 </Link>
               </ul>
               <button className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
-                Book Now
+            List All Trip
               </button>
             </nav>
             <HiMenuAlt1

@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost/coba/Project_Pemweb_Kelompok2/backend/insert_order.php",
+      "http://localhost/Project_Pemweb_Kelompok2/backend/insert_order.php",
       {
         method: "POST",
         headers: {
