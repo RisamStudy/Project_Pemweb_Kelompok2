@@ -59,49 +59,49 @@ const FeatureDestination = () => {
     {
       name: "Bali",
       img: Bali,
-      time: "5 Days - 4 Nights",
-      star: "5 (12 reviews)",
+      time: "5 Hari - 4 Malam",
+      star: "5 (12 ulasan)",
       price: "5.000.000",
       loading: "lazy",
     },
     {
       name: "Venice",
       img: Venice,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
       price: "4.000.000",
       loading: "lazy",
     },
     {
       name: "Tokyo",
       img: Tokyo,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
       price: "2.000.000",
       loading: "lazy",
     },
     {
       name: "India",
       img: India,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
       price: "8.000.000",
       loading: "lazy",
     },
     {
       name: "Paris",
       img: Paris,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
       price: "17.000.000",
       loading: "lazy",
     },
     {
       name: "Tokyo",
       img: Tokyo,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "6.900.000",
       loading: "lazy",
     },
   ];
@@ -110,7 +110,7 @@ const FeatureDestination = () => {
       <section className="w-full py-12 md:py-24 lg:pt-32 px-6 md:px-0">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
-            Featured Destinations
+            Destinasi Unggulan
           </h2>
           <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
           <div className="slider-container">
@@ -143,7 +143,7 @@ const FeatureDestination = () => {
                           {destination.star}
                         </h3>
                         <p className="text-gray-600 mb-4 mt-2">
-                          Experience the beauty and culture of{" "}
+                         Rasakan keindahan, budaya dan destinasi{" "}
                           {destination.name}
                         </p>
                         <div className="flex gap-4">
@@ -151,7 +151,7 @@ const FeatureDestination = () => {
                             Rp. {destination.price}
                           </button>
                           <button className="px-3 py-2 bg-black rounded-md text-white hover:bg-red-500 hover:cursor-pointer transition-all duration-300">
-                            Learn More
+                          Detail
                           </button>
                         </div>
                       </div>

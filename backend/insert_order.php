@@ -38,11 +38,11 @@ $name      = $data["name"] ?? '';
 $email     = $data["email"] ?? '';
 $wa        = $data["wa"] ?? '';
 $address   = $data["address"] ?? '';
-$message   = $data["message"] ?? '';
 $location  = $data["location"] ?? '';
 $checkIn   = $data["checkIn"] ?? '';
 $checkOut  = $data["checkOut"] ?? '';
 $guest     = $data['guest'] ?? '';
+$message   = $data["message"] ?? '';
 
 // === Koneksi database ===
 $conn = new mysqli("localhost", "root", "", "tour_booking");

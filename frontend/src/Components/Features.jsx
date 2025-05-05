@@ -45,11 +45,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-            Why Choose Our Travel Services
+            Mengapa Memilih Layanan Travel Kami
           </h2>
           <p className="mt-4 text-muted-foreground md:text-xl">
-            Discover the unique features that make your journey with us
-            extraordinary
+          Temukan fitur-fitur unik yang membuat perjalanan Anda bersama kami menjadi luar biasa
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

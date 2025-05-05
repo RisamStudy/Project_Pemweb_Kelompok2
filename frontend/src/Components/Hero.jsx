@@ -93,7 +93,7 @@ const Hero = () => {
                     Jelajahi destinasi yang menarik, ciptakan kenangan yang tak
                     terlupakan, dan mulailah perjalanan seumur hidup.
                   </p>
-                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold hover:bg-black hover:bg-black hover:cursor-pointer transition-all duration-300">
+                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold hover:bg-black hover:cursor-pointer transition-all duration-300">
                     Mulai Menjelajah
                   </button>
                 </div>
@@ -102,12 +102,12 @@ const Hero = () => {
           </div>
         </div>
       </Slider>
-      <div className="absolute left-[15%] bottom-[12%] hidden lg:flex items-center justify-center bg-white border border-gray-300 shadow-lg rounded-md z-10 w-[1050px] mx-auto p-4 ">
+      <div className="absolute left-[15%] bottom-[12%] hidden lg:flex items-center justify-center bg-white border border-gray-300 shadow-lg rounded-md  w-[1050px] mx-auto p-4 ">
         <div className="grid gap-5 grid-cols-4 flex-grow">
           <div className="flex flex-col gap-2 ">
             <label htmlFor="" className="flex font-semibold gap-1 items-center">
               {/* <Search className="w-4 h-4" /> */}
-              Location
+              Lokasi yang dituju
             </label>
             <select
               name=""
@@ -124,7 +124,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="" className="font-semibold">
-              Check In
+            Mulai Liburan
             </label>
             <input
               type="date"
@@ -133,7 +133,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="" className="font-semibold">
-              Check Out
+            Selesai Liburan
             </label>
             <input
               type="date"
@@ -143,19 +143,19 @@ const Hero = () => {
           <div className="flex flex-col gap-2">
             <label htmlFor="" className="flex font-bold gap-1 items-center">
               {/* <Search className="2-4 h-4" /> */}
-              Guest
+              Tamu
             </label>
             <select
               name=""
               id=""
               className="border border-gray-300 rounded-sm p-1"
             >
-              <option value="">Select options</option>
-              <option value="2-0">2 Guest 0 Children</option>
-              <option value="2-1">2 Guest 1 Children</option>
-              <option value="2-2">2 Guest 2 Children</option>
-              <option value="2-4">2 Guest 4 Children</option>
-              <option value="2-5">2 Guest 5 Children</option>
+              <option value="">Pilih Opsi</option>
+              <option value="2-0">2 Tamu 0 Anak</option>
+              <option value="2-1">2 Tamu 1 Anak</option>
+              <option value="2-2">2 Tamu 2 Anak</option>
+              <option value="2-4">2 Tamu 4 Anak</option>
+              <option value="2-5">2 Tamu 5 Anak</option>
             </select>
           </div>
         </div>

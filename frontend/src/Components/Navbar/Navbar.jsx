@@ -22,24 +22,24 @@ const Navbar = () => {
             <nav className="hidden md:flex gap-7">
               <ul className="flex items-center font-semibold text-white text-xl gap-7">
                 <Link to="/">
-                  <li className="hover:underline">Home</li>
+                  <li className="hover:underline">Beranda</li>
                 </Link>
                 <Link to="/about">
-                  <li className="hover:underline">About Us</li>
+                  <li className="hover:underline">Tentang Kami</li>
                 </Link>
                 <Link to="/tours">
-                  <li className="hover:underline">Tours</li>
+                  <li className="hover:underline">Perjalanan</li>
                 </Link>
                 <Link to="/gallery">
-                  <li className="hover:underline"> Gallery</li>
+                  <li className="hover:underline">Galeri</li>
                 </Link>
                 <Link to="/contact">
-                  <li className="hover:underline">Contact</li>
+                  <li className="hover:underline">Kontak</li>
                 </Link>
+              <Link to ="/ListAllTrip"  className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
+            Daftar Order
+              </Link>
               </ul>
-              <button className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
-            List All Trip
-              </button>
             </nav>
             <HiMenuAlt1
               onClick={toggleMenu}

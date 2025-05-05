@@ -5,7 +5,7 @@ import GalleryComp from "../Components/GalleryComp";
 const Gallery = () => {
   return (
     <>
-      <TopBanner text="Gallery" />
+      <TopBanner text="Galeri" />
       <GalleryComp />
     </>
   );

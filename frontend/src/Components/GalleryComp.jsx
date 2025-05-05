@@ -28,7 +28,7 @@ const GalleryComp = () => {
     <div className="max-w-7xl mx-auto mb-16 px-4 md:px-0 mt-10">
       <div className="">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
-          Our Gallery
+          Gallery Kami
         </h2>
         <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
       </div>

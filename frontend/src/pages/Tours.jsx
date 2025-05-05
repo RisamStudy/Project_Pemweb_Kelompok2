@@ -10,60 +10,60 @@ import { Clock, Star } from "lucide-react";
 const Tours = () => {
   const destinationJson = [
     {
-      name: "Baliya",
+      name: "Bali",
       img: Bali,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "5 (12 ulasan)",
+      price: "5.000.000",
       loading: "lazy",
     },
     {
       name: "Venice",
       img: Venice,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "4.000.000",
       loading: "lazy",
     },
     {
       name: "Tokyo",
       img: Tokyo,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "2.000.000",
       loading: "lazy",
     },
     {
       name: "India",
       img: India,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "8.000.000",
       loading: "lazy",
     },
     {
       name: "Paris",
       img: Paris,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "17.000.000",
       loading: "lazy",
     },
     {
       name: "Tokyo",
       img: Tokyo,
-      time: "5 Days - 4 Nights",
-      star: "3 (12 reviews)",
-      price: "69,999",
+      time: "5 Hari - 4 Malam",
+      star: "3 (12 ulasan)",
+      price: "6.900.000",
       loading: "lazy",
     },
   ];
   return (
     <>
-      <TopBanner text="Tours" />
+      <TopBanner text="Perjalanan" />
       <div className="max-w-7xl md:mx-auto my-10">
         <h1 className="text-3xl lg:text-4xl font-serif mb-3 font-semibold text-center">
-          Top Destination
+          Destinasi Terbaik
         </h1>
         <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
         <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center">
@@ -95,14 +95,14 @@ const Tours = () => {
                       {destination.star}
                     </p>
                     <p className="text-gray-600 mb-4 mt-2">
-                      Experience the beauty and culture of {destination.name}
+                    Rasakan keindahan, budaya dan destinasi {destination.name}
                     </p>
                     <div className="flex gap-4">
                       <button className="px-3 py-2 bg-red-500 rounded-md text-white">
-                        ${destination.price}
+                        Rp. {destination.price}
                       </button>
                       <button className="px-3 py-2 bg-black rounded-md text-white">
-                        Learn More
+                        Detail
                       </button>
                     </div>
                   </div>

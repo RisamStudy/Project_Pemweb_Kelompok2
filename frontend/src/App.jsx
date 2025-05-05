@@ -6,6 +6,7 @@ import Tours from "./pages/Tours";
 import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ListAllTrip from "./pages/ListAllTrip";
 import Footer from "./Components/Footer";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -56,6 +57,16 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Contact />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/ListAllTrip",
+    element: (
+      <>
+        <Navbar />
+        <ListAllTrip />
         <Footer />
       </>
     ),

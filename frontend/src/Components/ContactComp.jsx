@@ -65,20 +65,20 @@ const Contact = () => {
       </div>
       {/* Contact Form Section */}
       <div className="flex-1 bg-white w-full flex flex-col justify-center px-8 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Pesan Tiket Sekarang </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="">
             <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              Name
+              Nama
             </label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Enter Your Name"
+              placeholder="Masukkan Nama Anda"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
               required
             />
@@ -94,7 +94,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Enter Your email"
+              placeholder="Masukkan Email "
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
               required
             />
@@ -102,13 +102,13 @@ const Contact = () => {
               htmlFor="wa"
               className="block text-sm font-medium text-gray-700 mt-5"
             >
-              Number Whatsapp
+              Nomor Whatsapp
             </label>
             <input
               type="tel"
               id="wa"
               name="wa"
-              placeholder="Enter Your Number Whatsapp"
+              placeholder="Masukkan Nomor WhatsApp "
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
               required
             />
@@ -116,13 +116,13 @@ const Contact = () => {
               htmlFor="address"
               className="block text-sm font-medium text-gray-700 mt-5"
             >
-              Your Addres
+              Alamat Rumah Anda
             </label>
             <input
               type="text"
               id="address"
               name="address"
-              placeholder="Enter Your Address"
+              placeholder="Masukkan Alamat Rumah Anda"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
               required
             />
@@ -135,7 +135,7 @@ const Contact = () => {
                   className="flex font-semibold gap-1 items-center"
                 >
                   {/* Removed unused Search component */}
-                  Location
+                  Lokasi
                 </label>
                 <select
                   name="location"
@@ -143,7 +143,7 @@ const Contact = () => {
                   className="border border-gray-300 rounded-sm p-1"
                   required
                 >
-                  <option value="">Select options</option>
+                  <option value="">Pilih Opsi</option>
                   <option value="bali">Bali</option>
                   <option value="india">India</option>
                   <option value="tokyo">Tokyo</option>
@@ -153,7 +153,7 @@ const Contact = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="checkIn" className="font-semibold">
-                  Check In
+                  Mulai Liburan
                 </label>
                 <input
                   type="date"
@@ -165,7 +165,7 @@ const Contact = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="checkOut" className="font-semibold">
-                  Check Out
+                  Selesai Liburan
                 </label>
                 <input
                   type="date"
@@ -181,7 +181,7 @@ const Contact = () => {
                   className="flex font-bold gap-1 items-center"
                 >
                   {/* Removed unused Search component */}
-                  Guest
+                  Tamu
                 </label>
                 <select
                   name="guest"
@@ -189,12 +189,12 @@ const Contact = () => {
                   className="border border-gray-300 rounded-sm p-1"
                   required
                 >
-                  <option value="">Select options</option>
-                  <option value="2-0">2 Guest 0 Children</option>
-                  <option value="2-1">2 Guest 1 Children</option>
-                  <option value="2-2">2 Guest 2 Children</option>
-                  <option value="2-4">2 Guest 4 Children</option>
-                  <option value="2-5">2 Guest 5 Children</option>
+                  <option value="">Pilih Opsi</option>
+                  <option value="2-0">2 Tamu 0 Anak</option>
+                  <option value="2-1">2 Tamu 1 Anak</option>
+                  <option value="2-2">2 Tamu 2 Anak</option>
+                  <option value="2-4">2 Tamu 4 Anak</option>
+                  <option value="2-5">2 Tamu 5 Anak</option>
                 </select>
               </div>
             </div>
@@ -202,13 +202,13 @@ const Contact = () => {
               htmlFor="message"
               className="block text-sm font-medium text-gray-700 mt-5"
             >
-              Message
+              Pesan
             </label>
             <textarea
               id="message"
               name="message"
               rows="5"
-              placeholder="Enter Your Message"
+              placeholder="Masukkan Pesan anda"
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 p-2"
               required
             />
@@ -217,7 +217,7 @@ const Contact = () => {
             type="submit"
             className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 hover:cursor-pointer"
           >
-            Send Message
+            Kirim Pesan
           </button>
         </form>
       </div>

@@ -25,37 +25,37 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col lg:items-center">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">Tautan Cepat</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:underline hover:text-red-500">
-                  Home
+                  Beranda
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                  Destinations
+                  Destinasi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                  Tours
+                  Perjalanan
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                  About Us
+                  Tentang Kami
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                  Contact
+                  Kontak
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">Hubungi Kami</h3>
             <ul className="space-y-2 text-sm">
               <li>123 alamat</li>
               <li>No telp</li>
@@ -63,7 +63,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+            <h3 className="text-lg font-semibold mb-4">Ikuti Kami</h3>
             <div className="flex space-x-4 ">
               <FaFacebook className="hover:text-red-500" />
               <FaInstagram className="hover:text-red-500" />

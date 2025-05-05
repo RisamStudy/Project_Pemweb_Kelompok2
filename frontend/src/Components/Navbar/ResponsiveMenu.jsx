@@ -27,28 +27,26 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
         <nav className="mt-12">
           <ul className="space-y-4 text-xl text-black flex flex-col">
             <Link to="/">
-              <li onClick={() => setShowMenu(false)}>Home</li>
+              <li onClick={() => setShowMenu(false)} className="hover:underline">Home</li>
             </Link>
             <Link to="/about">
-              <li onClick={() => setShowMenu(false)}>About Us</li>
+              <li onClick={() => setShowMenu(false)} className="hover:underline">About Us</li>
             </Link>
             <Link to="/tours">
-              <li onClick={() => setShowMenu(false)}>Tours</li>
+              <li onClick={() => setShowMenu(false)} className="hover:underline">Tours</li>
             </Link>
             <Link to="/gallery">
-              <li onClick={() => setShowMenu(false)}>Gallery</li>
+              <li onClick={() => setShowMenu(false)} className="hover:underline">Gallery</li>
             </Link>
             <Link to="/contact">
-              <li onClick={() => setShowMenu(false)}>Contact</li>
+              <li onClick={() => setShowMenu(false)} className="hover:underline">Contact</li>
             </Link>
-            <Link to="#">
-              <button
-                onClick={() => setShowMenu(false)}
-                className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold"
-              >
-                Book Now
-              </button>
+            <Link to="/ListAllTrip">
+              <li onClick={() => setShowMenu(false)} className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">List All Trip</li>
             </Link>
+                          {/* <Link to ="/list_all_trip"  className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
+                        List All Trip
+                          </Link> */}
           </ul>
         </nav>
       </div>

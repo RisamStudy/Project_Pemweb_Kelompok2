@@ -7,7 +7,7 @@ import price from "../assets/best-price.gif";
 const About = () => {
   return (
     <div>
-      <TopBanner text="About" />
+      <TopBanner text="Tentang Kami" />
       <div className="max-w-7xl mx-auto my-10">
         <div className="flex flex-col md:flex-row px-4 md:px-0 gap-4">
           <div className="flex-1">
@@ -19,32 +19,18 @@ const About = () => {
                 loading="lazy"
               />
               <div className="absolute bottom-[45%] right-0 p-4 bg-red-500 text-white  font-bold md:text-4xl rounded-lg">
-                How We Are Best <br /> For Travel !
+                Kami Yang Terbaik <br /> Untuk Perjalanan !
               </div>
             </div>
             <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl">
-              How We Nest For Travel !
+            Bagaimana Kami Bersarang Untuk Perjalanan!
             </h1>
             <p className="text-gray-500">
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              accusantium maxime quidem facilis praesentium, voluptates quis
-              fuga repudiandae. Commodi corporis nesciunt eligendi tenetur iure
-              illum optio dolor repellat nihil, ratione earum iusto magni eum,
-              libero dolore deleniti nemo qui vel ex atque harum sapiente
-              deserunt? Assumenda, tempora fugit laudantium eveniet doloremque
-              illo adipisci accusantium numquam omnis tempore voluptates, labore
-              aut ea perspiciatis consectetur nihil provident optio. Itaque
-              ipsam sunt porro accusantium hic. Blanditiis minus fugit hic
-              aliquid voluptate, quaerat necessitatibus officiis odio alias enim
-              inventore dignissimos? Architecto quidem illum nihil beatae ullam
-              veritatis ea nostrum molestias ab rerum expedita voluptatum hic
-              quas porro error vel enim obcaecati in, consectetur perferendis
-              ratione provident at optio sapiente! Quam, saepe officia aliquid
-              porro neque suscipit sed tempore asperiores quaerat quisquam
-              recusandae optio consectetur ipsa rem commodi maxime excepturi
-              ipsum veritatis in quibusdam nobis. Pariatur veniam id facilis
-              delectus suscipit voluptatibus beatae, maxime architecto.
+              Kami percaya bahwa setiap perjalanan dimulai dari tempat di mana mimpi dan rencana bertemu. Di sinilah kami bersarang—membangun fondasi yang kuat untuk setiap pengalaman tak terlupakan yang akan Anda jalani. Tim kami merancang setiap detail dengan teliti, mulai dari pemilihan destinasi, akomodasi nyaman, hingga aktivitas menarik yang sesuai dengan minat Anda.
+
+Dengan semangat layanan yang tulus, kami bukan hanya penyedia tiket atau itinerary. Kami adalah teman perjalanan Anda—siap mendengarkan, menyesuaikan, dan memberikan solusi terbaik demi kenyamanan dan keamanan Anda.
+
+Melalui teknologi, kemitraan terpercaya, dan pengalaman di industri wisata, kami memastikan setiap langkah Anda penuh makna. Bersama kami, perjalanan bukan hanya soal tempat yang dituju, tapi bagaimana Anda merasa selama menjalaninya. Mari bersarang bersama kami, dan terbang menuju petualangan impian Anda!
             </p>
           </div>
           <div className="flex-1">
@@ -53,11 +39,10 @@ const About = () => {
                 <img src={trip} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
-                    50+ Destination
+                    50+ Destinasi
                   </h2>
                   <p className="text-gray-700 ml-2 lg:mr-28">
-                    We offer the best travel experiences with personalized
-                    service and unbeatable prices.
+                  Kami menawarkan pengalaman perjalanan terbaik dengan layanan yang dipersonalisasi dan harga yang tidak ada duanya.
                   </p>
                 </div>
               </div>
@@ -67,11 +52,10 @@ const About = () => {
                 <img src={time} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
-                    Super Fast Booking
+                    Pemesanan Super Cepat
                   </h2>
                   <p className="text-gray-700 ml-2 lg:mr-28">
-                    We offer the best travel experiences with personalized
-                    service and unbeatable prices.
+                    Pesanan anda langsung kami konfirmasi 
                   </p>
                 </div>
               </div>
@@ -81,11 +65,10 @@ const About = () => {
                 <img src={price} alt="" className="w-20" loading="lazy" />
                 <div>
                   <h2 className="ml-2 text-2xl font-semibold mb-1">
-                    Best price
+                    Harga Terbaik
                   </h2>
                   <p className="text-gray-700 ml-2 lg:mr-28">
-                    We offer the best travel experiences with personalized
-                    service and unbeatable prices.
+                    Harga Murah dengan kualitas destinasi yang luar biasa
                   </p>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import TopBanner from "../Components/TopBanner";
 const Contact = () => {
   return (
     <>
-      <TopBanner text="Contact" />
+      <TopBanner text="Kontak" />
       <ContactComp />
     </>
   );
