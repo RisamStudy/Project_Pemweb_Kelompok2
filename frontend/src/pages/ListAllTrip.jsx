@@ -1,18 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
-import TopBanner from '../Components/TopBanner';
+import React, { useEffect, useState } from "react";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import TopBanner from "../Components/TopBanner";
 
 const ListAllTrip = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost/Project_Pemweb_Kelompok2/backend/get_orders.php')
-      .then(res => res.json())
-      .then(data => {
+    fetch(
+      "http://localhost/coba/Project_Pemweb_Kelompok2/backend/get_orders.php"
+    )
+      .then((res) => res.json())
+      .then((data) => {
         console.log("Data dari backend:", data);
         setOrders(data);
       })
-      .catch(err => console.error('Fetch error:', err));
+      .catch((err) => console.error("Fetch error:", err));
   }, []);
 
   // Proses data untuk Pie Chart
@@ -23,17 +32,19 @@ const ListAllTrip = () => {
 
   const pieData = Object.entries(locationCount).map(([location, count]) => ({
     name: location,
-    value: count
+    value: count,
   }));
 
-  const COLORS = ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#FF5722'];
+  const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#FF5722"];
 
   return (
     <>
       <TopBanner text="Daftar Order " />
       {/* Tabel Daftar Order */}
       <section className="p-4">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">Daftar Order</h2>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
+          Daftar Order
+        </h2>
         <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
         <table className="w-full border text-sm text-center">
           <thead>
@@ -47,9 +58,9 @@ const ListAllTrip = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders.map((order, index) => (
               <tr key={order.id}>
-                <td className="border p-2">{order.id}</td>
+                <td className="border p-2">{index + 1}</td>
                 <td className="border p-2">{order.name}</td>
                 <td className="border p-2">{order.location}</td>
                 <td className="border p-2">{order.checkIn}</td>
@@ -63,7 +74,9 @@ const ListAllTrip = () => {
 
       {/* Pie Chart */}
       <section className="p-4 mt-10">
-        <h2 className="text-2xl font-bold text-center mb-4 font-serif">Statistik Lokasi Pemesanan</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 font-serif">
+          Statistik Lokasi Pemesanan
+        </h2>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
@@ -77,7 +90,10 @@ const ListAllTrip = () => {
               label
             >
               {pieData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Pie>
             <Tooltip />

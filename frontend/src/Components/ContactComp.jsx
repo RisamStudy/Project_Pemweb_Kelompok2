@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost/Project_Pemweb_Kelompok2/backend/insert_order.php",
+      "http://localhost/coba/Project_Pemweb_Kelompok2/backend/insert_order.php",
       {
         method: "POST",
         headers: {
@@ -65,7 +65,9 @@ const Contact = () => {
       </div>
       {/* Contact Form Section */}
       <div className="flex-1 bg-white w-full flex flex-col justify-center px-8 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Pesan Tiket Sekarang </h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          Pesan Tiket Sekarang{" "}
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="">
             <label
