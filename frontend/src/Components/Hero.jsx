@@ -65,7 +65,7 @@ const Hero = () => {
                     Jelajahi destinasi yang menarik, ciptakan kenangan yang tak
                     terlupakan, dan mulailah perjalanan seumur hidup.
                   </p>
-                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold hover:bg-black hover:bg-black hover:cursor-pointer transition-all duration-300">
+                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold hover:bg-black hover:cursor-pointer transition-all duration-300">
                     Mulai Menjelajah
                   </button>
                 </div>
@@ -163,7 +163,7 @@ const Hero = () => {
           <label htmlFor="" className="text-white">
             Transmission
           </label>
-          <button className="bg-red-500 transition-all ease-in text-white hover:bg-black margin px-3 py-1 rounded-md ml-6 hover:cursor-pointer">
+          <button className="bg-red-500 transition-all ease-in text-white hover:bg-black margin px-3 py-1 rounded-md ml-6 hover:cursor-pointer" >
             Lihat Jadwal
           </button>
         </div>

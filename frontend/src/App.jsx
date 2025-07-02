@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import ListAllTrip from "./pages/ListAllTrip";
 import Footer from "./Components/Footer";
 import ScrollToTop from "react-scroll-to-top";
+import EditOrder from "./pages/EditOrder";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,17 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+  path: "/edit/:id",
+  element: (
+    <>
+      <Navbar />
+      <EditOrder />
+      <Footer />
+    </>
+  ),
+},
+
 ]);
 
 const App = () => {

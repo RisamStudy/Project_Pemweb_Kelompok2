@@ -15,7 +15,7 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
           className="border border-black rounded-lg absolute top-4 right-9 "
           onClick={() => setShowMenu(false)}
         >
-          <X />
+          <X className="cursor-pointer" />
         </button>
         <div className="flex items-center justify-start gap-3">
           <FaUserCircle size={50} />
@@ -44,9 +44,6 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
             <Link to="/ListAllTrip">
               <li onClick={() => setShowMenu(false)} className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">List All Trip</li>
             </Link>
-                          {/* <Link to ="/list_all_trip"  className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
-                        List All Trip
-                          </Link> */}
           </ul>
         </nav>
       </div>

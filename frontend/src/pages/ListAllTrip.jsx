@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import TopBanner from '../Components/TopBanner';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ListAllTrip = () => {
   const [orders, setOrders] = useState([]);
@@ -14,6 +15,25 @@ const ListAllTrip = () => {
       })
       .catch(err => console.error('Fetch error:', err));
   }, []);
+
+  // Delete
+  const navigate = useNavigate();
+  const handleDelete = (id) => {
+  if (window.confirm("Yakin ingin menghapus data ini?")) {
+    fetch(`http://localhost/PROJECT_PEMWEB_KELOMPOK2/backend/delete_order.php?id=${id}`, {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert("Data berhasil dihapus");
+        // Lakukan refresh data dari backend
+        navigate(0); // Fungsi untuk ambil ulang data
+      });
+
+  }
+
+};
+
 
   // Proses data untuk Pie Chart
   const locationCount = orders.reduce((acc, curr) => {
@@ -44,6 +64,7 @@ const ListAllTrip = () => {
               <th className="border p-2">Mulai Liburan</th>
               <th className="border p-2">Selesai Liburan</th>
               <th className="border p-2">Tamu</th>
+              <th className="border p-2">Keterangan</th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +76,7 @@ const ListAllTrip = () => {
                 <td className="border p-2">{order.checkIn}</td>
                 <td className="border p-2">{order.checkOut}</td>
                 <td className="border p-2">{order.guest}</td>
+                <td className="border p-2"><a href={`/edit/${order.id}`} className='text-red underline'>Edit</a> || <a href="#" onClick={() => handleDelete(order.id)} className='text-red underline'>Delete</a></td>
               </tr>
             ))}
           </tbody>
