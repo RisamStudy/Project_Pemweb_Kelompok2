@@ -69,8 +69,12 @@ if (!$stmt->bind_param("sssssssss", $name, $email, $wa, $address, $location, $ch
 
 if ($stmt->execute()) {
     echo json_encode(["success" => true, "message" => "Order saved successfully"]);
+    http_response_code(201);
+    header('Content-Type: application/json');
 } else {
     echo json_encode(["success" => false, "message" => "Failed to save order: " . $stmt->error]);
+    http_response_code(400);
+    header('Content-Type: application/json');
 }
 
 $stmt->close();

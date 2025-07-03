@@ -1,4 +1,5 @@
 <?php
+include 'db.php';
 // Tangani CORS untuk semua jenis request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: http://localhost:5173");
@@ -23,30 +24,11 @@ error_reporting(E_ALL);
 // === Koneksi ke database ===
 $conn = new mysqli("localhost", "root", "", "tour_booking");
 
-if ($conn->connect_error) {
-    echo json_encode(["success" => false, "message" => "Database connection failed"]);
-    exit;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "SELECT * FROM orders WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($result);
+    echo json_encode($data);
 }
-
-// === Ambil semua data dari tabel orders ===
-$sql = "SELECT id, name, location, checkIn, checkOut, guest from orders;";
-$result = $conn->query($sql);
-
-if (!$result) {
-    
-    echo json_encode(["success" => false, "message" => "Query failed: " . $conn->error]);
-    exit;
-}
-
-$data = [];
-header('Content-Type: application/json');
-http_response_code(404);
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
-
-// === Kirim data sebagai JSON ===
-echo json_encode($data);
-
-$conn->close();
 ?>

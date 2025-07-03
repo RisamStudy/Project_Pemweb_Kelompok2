@@ -21,7 +21,7 @@ const ListAllTrip = () => {
   const handleDelete = (id) => {
   if (window.confirm("Yakin ingin menghapus data ini?")) {
     fetch(`http://localhost/PROJECT_PEMWEB_KELOMPOK2/backend/delete_order.php?id=${id}`, {
-      method: 'GET'
+      method: 'DELETE'
     })
       .then(res => res.json())
       .then(data => {
@@ -52,10 +52,10 @@ const ListAllTrip = () => {
     <>
       <TopBanner text="Daftar Order " />
       {/* Tabel Daftar Order */}
-      <section className="p-4">
+      <section className="p-4 overflow-x-auto w-full">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">Daftar Order</h2>
         <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
-        <table className="w-full border text-sm text-center">
+        <table className="w-full border text-sm text-center ">
           <thead>
             <tr>
               <th className="border p-2">Nomor</th>
@@ -76,7 +76,7 @@ const ListAllTrip = () => {
                 <td className="border p-2">{order.checkIn}</td>
                 <td className="border p-2">{order.checkOut}</td>
                 <td className="border p-2">{order.guest}</td>
-                <td className="border p-2"><a href={`/edit/${order.id}`} className='text-red underline'>Edit</a> || <a href="#" onClick={() => handleDelete(order.id)} className='text-red underline'>Delete</a></td>
+                <td className="border p-2"><a href={`/edit/${order.id}`} className='bg-red-500 p-1 text-white px-3  rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer underline'>Edit</a><a href="#" onClick={() => handleDelete(order.id)} className='bg-red-500 p-1 text-white px-3  rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer underline m-1'>Delete</a></td>
               </tr>
             ))}
           </tbody>

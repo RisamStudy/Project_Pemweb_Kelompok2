@@ -37,10 +37,11 @@ const Navbar = () => {
                   <li className="hover:underline">Kontak</li>
                 </Link>
               <Link to ="/ListAllTrip"  className="bg-red-500 text-white px-4 py-1 rounded-md font-semibold hover:bg-red-600 hover:cursor-pointer">
-            Daftar Order
+            List All Trip
               </Link>
               </ul>
             </nav>
+            {/* Ini untuk Hamburger menu */}
             <HiMenuAlt1
               onClick={toggleMenu}
               className="cursor-pointer md:hidden text-white"
