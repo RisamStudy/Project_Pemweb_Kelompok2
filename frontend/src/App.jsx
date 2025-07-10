@@ -10,6 +10,9 @@ import ListAllTrip from "./pages/ListAllTrip";
 import Footer from "./Components/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import EditOrder from "./pages/EditOrder";
+import LoginForm from "./Components/LoginForm";
+import AdminDashboard from "./pages/AdminDashboard";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
         <Footer />
       </>
     ),
+  },
+    {
+    path: "/login",
+    element: <LoginForm />, // Halaman login tanpa Navbar dan Footer
   },
   {
     path: "/tours",
@@ -82,6 +89,14 @@ const router = createBrowserRouter([
     </>
   ),
 },
+  {
+    path: "/admin-dashboard",
+    element: (
+      <ProtectedRoute role="admin">
+        <AdminDashboard />
+      </ProtectedRoute>
+    ),
+  },
 
 ]);
 

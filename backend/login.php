@@ -22,38 +22,32 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Konfigurasi koneksi database
-$host = 'localhost';
-$user = 'root';
-$pass = ''; // Kosongkan jika tidak ada password
-$dbname = 'tour_booking'; // Ganti dengan nama database kamu
+require_once 'db_connection.php';
 
-// Buat koneksi
-$conn = new mysqli($host, $user, $pass, $dbname);
+$data = json_decode(file_get_contents("php://input"), true);
+$email = $data['email'] ?? '';
+$password = $data['password'] ?? '';
 
-// Periksa koneksi
-if ($conn->connect_error) {
-    http_response_code(500);
-    echo json_encode(["error" => "Koneksi ke database gagal: " . $conn->connect_error]);
-    exit;
-}
+$database = new Database();
+$db = $database->getConnection();
 
-// Query untuk mengambil data orders
-$sql = "SELECT customers_id, name, email, phone  FROM customers"; // Ganti "orders" jika nama tabel berbeda
-$result = $conn->query($sql);
+$query = "SELECT id, email, password_hash, role FROM admin WHERE email = ?";
+$stmt = $db->prepare($query);
+$stmt->execute([$email]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Siapkan array data
-$data = [];
-
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
-    echo json_encode($data);
+if ($user && password_verify($password, $user['password_hash'])) {
+    echo json_encode([
+        'success' => true,
+        'message' => 'Login berhasil',
+        'user' => [
+            'id' => $user['id'],
+            'email' => $user['email'],
+            'role' => $user['role']
+        ]
+    ]);
 } else {
-    echo json_encode([]); // Kosongkan jika tidak ada data
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Email atau password salah']);
 }
-
-// Tutup koneksi
-$conn->close();
 ?>
