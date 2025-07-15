@@ -39,8 +39,7 @@ if ($conn->connect_error) {
 }
 
 // Query untuk mengambil data orders
-// Kolom Kolom data order
-$sql = "SELECT id, email, full_name, role, created_at FROM admin"; 
+$sql = "SELECT order_id, user_id, tour_id, order_date, total_price, booking_status, notes FROM orders"; 
 $result = $conn->query($sql);
 
 // Siapkan array data

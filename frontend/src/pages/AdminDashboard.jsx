@@ -18,6 +18,9 @@ export default function AdminDashboard() {
   const [showCustomers, setshowCustomers] = useState("dashboard");
   const navigate = useNavigate();
   const [admins, setAdmins] = useState([]);
+  const [orders, setorder] = useState([]);
+  const [payments, setpayments] = useState([]);
+
 
   // Proteksi route dan ambil data
   useEffect(() => {
@@ -33,6 +36,7 @@ export default function AdminDashboard() {
 
     fetchcustomers();
     fetchAdmins();
+    fetchorder();
   }, [navigate]);
 
   const fetchcustomers = async () => {
@@ -56,6 +60,21 @@ export default function AdminDashboard() {
     console.error("Gagal mengambil data admin:", err);
   }
 };
+
+
+
+// SIPA
+const fetchorder = async () => {
+  try {
+    const response = await fetch('http://localhost/Project_Pemweb_Kelompok2/backend/get_order.php');
+    const data = await response.json();
+    setorder(data);
+    setStats(prev => ({ ...prev, admin: data.length })); // Update jumlah admin di statistik
+  } catch (err) {
+    console.error("Gagal mengambil data admin:", err);
+  }
+};
+
 
 
 const handleDelete = async (id) => {
@@ -126,6 +145,13 @@ const handleDelete = async (id) => {
 >
   Management Admin
 </button>
+<button 
+  onClick={() => setshowCustomers("order")}
+  className="px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium"
+>
+  orders
+</button>
+
 
           </nav>
         </div>
@@ -183,6 +209,9 @@ const handleDelete = async (id) => {
     )}
   </tbody>
 </table>
+
+
+{/* HIDA */}
 {showCustomers === "admin" && (
   <div className="px-4 py-6 sm:px-0">
     <div className="bg-white rounded-lg shadow p-6">
@@ -216,6 +245,48 @@ const handleDelete = async (id) => {
     </div>
   </div>
 )}
+
+
+
+{/* SIPA */}
+{showCustomers === "order" && (
+  <div className="px-4 py-6 sm:px-0">
+    <div className="bg-white rounded-lg shadow p-6">
+      <h2 className="text-2xl font-semibold mb-6">Daftar order</h2>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">order_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">user_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">tour_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">order_date</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">total_price</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">booking_status</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">notes</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {orders.length > 0 ? orders.map(order => (
+            <tr key={order.id}>
+              <td className="px-6 py-4 whitespace-nowrap">{order.order_id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.user_id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.tour_id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.order_date}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.total_price}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.booking_status}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{order.notes}</td>
+            </tr>
+          )) : (
+            <tr>
+              <td colSpan="5" className="text-center text-gray-500 py-4">Tidak ada data admin.</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
 
 
 
