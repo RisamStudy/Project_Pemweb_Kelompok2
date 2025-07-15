@@ -15,8 +15,9 @@ export default function AdminDashboard() {
   const [visitorStats, setVisitorStats] = useState([]);
   const [customers,  setCustomers] = useState([]);
   const [editingcustomers, setEditingcustomers] = useState(null);
-  const [showCustomers, setshowCustomers] = useState(false);
+  const [showCustomers, setshowCustomers] = useState("dashboard");
   const navigate = useNavigate();
+  const [admins, setAdmins] = useState([]);
 
   // Proteksi route dan ambil data
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function AdminDashboard() {
       .catch(err => console.error("Gagal mengambil data visitor:", err));
 
     fetchcustomers();
+    fetchAdmins();
   }, [navigate]);
 
   const fetchcustomers = async () => {
@@ -42,6 +44,19 @@ export default function AdminDashboard() {
       console.error("Gagal mengambil data customers:", err);
     }
   };
+
+
+  const fetchAdmins = async () => {
+  try {
+    const response = await fetch('http://localhost/Project_Pemweb_Kelompok2/backend/get_admin.php');
+    const data = await response.json();
+    setAdmins(data);
+    setStats(prev => ({ ...prev, admin: data.length })); // Update jumlah admin di statistik
+  } catch (err) {
+    console.error("Gagal mengambil data admin:", err);
+  }
+};
+
 
 const handleDelete = async (id) => {
   const confirmDelete = window.confirm("Apakah Anda yakin ingin menghapus data ini?");
@@ -94,7 +109,7 @@ const handleDelete = async (id) => {
           <h1 className="text-3xl font-bold text-gray-900">Master Admin</h1>
           <nav className="flex space-x-4">
             <button 
-              onClick={() => setshowCustomers(false)}
+              onClick={() => setshowCustomers("dashboard")}
               className="px-4 py-2 text-gray-700 hover:text-indigo-600"
             >
               Dashboard
@@ -105,6 +120,13 @@ const handleDelete = async (id) => {
             >
               Management Orders
             </button>
+            <button 
+  onClick={() => setshowCustomers("admin")}
+  className="px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium"
+>
+  Management Admin
+</button>
+
           </nav>
         </div>
       </header>
@@ -161,6 +183,40 @@ const handleDelete = async (id) => {
     )}
   </tbody>
 </table>
+{showCustomers === "admin" && (
+  <div className="px-4 py-6 sm:px-0">
+    <div className="bg-white rounded-lg shadow p-6">
+      <h2 className="text-2xl font-semibold mb-6">Daftar Admin</h2>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Role</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tanggal Daftar</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {admins.length > 0 ? admins.map(admin => (
+            <tr key={admin.id}>
+              <td className="px-6 py-4 whitespace-nowrap">{admin.id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{admin.email}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{admin.full_name}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{admin.role}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{admin.created_at}</td>
+            </tr>
+          )) : (
+            <tr>
+              <td colSpan="5" className="text-center text-gray-500 py-4">Tidak ada data admin.</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
 
 
                 </div>
