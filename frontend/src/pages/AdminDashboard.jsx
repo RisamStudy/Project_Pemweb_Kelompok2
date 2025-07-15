@@ -37,6 +37,7 @@ export default function AdminDashboard() {
     fetchcustomers();
     fetchAdmins();
     fetchorder();
+    fetchpayments();
   }, [navigate]);
 
   const fetchcustomers = async () => {
@@ -69,6 +70,19 @@ const fetchorder = async () => {
     const response = await fetch('http://localhost/Project_Pemweb_Kelompok2/backend/get_order.php');
     const data = await response.json();
     setorder(data);
+    setStats(prev => ({ ...prev, admin: data.length })); // Update jumlah admin di statistik
+  } catch (err) {
+    console.error("Gagal mengambil data admin:", err);
+  }
+};
+
+
+// SIGIT
+const fetchpayments = async () => {
+  try {
+    const response = await fetch('http://localhost/Project_Pemweb_Kelompok2/backend/get_payments.php');
+    const data = await response.json();
+    setpayments(data);
     setStats(prev => ({ ...prev, admin: data.length })); // Update jumlah admin di statistik
   } catch (err) {
     console.error("Gagal mengambil data admin:", err);
@@ -150,6 +164,12 @@ const handleDelete = async (id) => {
   className="px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium"
 >
   orders
+</button>
+<button 
+  onClick={() => setshowCustomers("payments")}
+  className="px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium"
+>
+  payments
 </button>
 
 
@@ -279,6 +299,47 @@ const handleDelete = async (id) => {
           )) : (
             <tr>
               <td colSpan="5" className="text-center text-gray-500 py-4">Tidak ada data admin.</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+
+
+{/* Sigit */}
+{showCustomers === "payments" && (
+  <div className="px-4 py-6 sm:px-0">
+    <div className="bg-white rounded-lg shadow p-6">
+      <h2 className="text-2xl font-semibold mb-6">Daftar payment</h2>
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">order_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">user_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">tour_id</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">order_date</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">total_price</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">booking_status</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">notes</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {payments.length > 0 ? payments.map(payment => (
+            <tr key={payment.id}>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.payment_id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.order_id}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.payment_method}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.payment_date}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.amount_paid}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.payment_proof}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{payment.status}</td>
+            </tr>
+          )) : (
+            <tr>
+              <td colSpan="5" className="text-center text-gray-500 py-4">Tidak ada data payments.</td>
             </tr>
           )}
         </tbody>
